@@ -1,1 +1,1 @@
-web: gunicorn MediaServer.asgi:application
+web: gunicorn MediaServer.wsgi:application
