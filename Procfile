@@ -1,0 +1,1 @@
+web: gunicorn MediaServer.asgi:application
