@@ -13,6 +13,7 @@ async def Home(request):
 @sync_to_async
 def SaveProfile(request):
     Obj_Form = CitizenForm(request.POST, request.FILES)
+    print("##################### : ", Obj_Form, Obj_Form.is_valid())
     if Obj_Form.is_valid():
         Obj = Obj_Form.save()
         return JsonResponse(Obj.Json())
