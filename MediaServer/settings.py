@@ -136,7 +136,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 if os.getenv('ENV') == "PRODUCTION":
-    DEBUG = False
+    # DEBUG = False
     SECRET_KEY = os.environ.get('SECRET_KEY')
     DATABASES['default'] = dj_database_url.config(env="DATABASE_URL")
     print("DATABASES : ", DATABASES)
