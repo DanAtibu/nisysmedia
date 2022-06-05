@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+
+from ProfilImage.models import Citizen
 from .forms import (CitizenForm)
 from asgiref.sync import sync_to_async
 
@@ -8,6 +10,11 @@ from asgiref.sync import sync_to_async
 
 async def Home(request):
     return render(request, 'index.html', {'form': CitizenForm()})
+
+
+@sync_to_async
+def GetAllData(request):
+    return JsonResponse({'data': [ _.Json() for _ in Citizen.objects.all() ]})
 
 
 @sync_to_async
